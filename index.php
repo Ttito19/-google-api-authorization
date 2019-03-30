@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['access_token_principal'])) {
-	header('loaction:login.php');
+if (!isset($_SESSION['access_token'])) {
+	header('location:login.php');
 	exit();
 }
- //print_r($_SESSION);
+//print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>

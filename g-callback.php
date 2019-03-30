@@ -2,11 +2,11 @@
 require_once "config.php";
 
 
-if(isset($_SESSION['access_token_principal']))
-$gClient->setAccessToken($_SESSION['access_token_principal']);
+if(isset($_SESSION['access_token']))
+$gClient->setAccessToken($_SESSION['access_token']);
 else if(isset($_GET['code'])){
 	$token=$gClient->fetchAccessTokenWithAuthCode($_GET['code']);
-	$_SESSION['access_token_principal']=$token;
+	$_SESSION['access_token']=$token;
 }else{
 
 header('Location:login.php');
